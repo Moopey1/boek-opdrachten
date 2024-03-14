@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="hello"></div>
+    <div id="result"></div>
+    <div id="arguments"></div>
+    <div id="array"></div>
+    <script>
+        // 1 tot 3
+        const message = prompt('Vul maar wat in!', 'Dit is een test!');
+        function hello(value) {
+            document.getElementById('hello').innerText = 'Jij schreef: ' + value;
+        }
+        // 4 tot 5
+        const nmb1 = parseInt(prompt('Voer het eerste getal in.'));
+        const nmb2 = parseInt(prompt('Voer het tweede getal in.'));
+        function addNumbers(value1, value2) {
+            document.getElementById('result').innerText = `Het antwoord is: ${value1 + value2}`;
+        }
+        // 6
+        function countArguments(arg1, arg2, arg3) {
+            document.getElementById('arguments').innerText = `Functie is aangeroepen met ${arguments.length} parameters!`;
+        }
+        // 7a
+        const names = ['Anneloes', 'Jon', 'Tijn', 'Evy', 'Sophie'];
+        function writeElements() {
+            document.getElementById('array').innerText = `Het aantal elementen is ${names.length}`;
+        }
+        // 7b
+        function selectElements() {
+            console.log(names[0], names[2], names[4]);
+        }
+        // 7c
+        function sortElements() {
+            console.log(names.sort());
+        }
+        // 7d
+        const newValue = prompt('Vul de nieuwe waarde in: ', 'Pluim');
+        function addElement() {
+            names.push(newValue)
+            console.log(names);
+        }
+        // 7e
+        function setString() {
+            console.log(names.join('-'));
+        }
+
+        // 8
+        const mijnArray = ['beer', 'Aap', 'Dolfijn', 'chihuahua', 'Ezel'];
+        mijnArray.sort(function (a, b) {
+            const x = a.toLowerCase();
+            const y = b.toLowerCase();
+            console.log(x, y);
+        });
+
+        hello(message);
+        addNumbers(nmb1, nmb2);
+        countArguments(nmb1);
+        writeElements();
+        selectElements();
+        sortElements();
+        addElement();
+        setString();
+    </script>
+</body>
+
+</html>
