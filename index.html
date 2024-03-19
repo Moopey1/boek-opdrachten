@@ -22,13 +22,13 @@
     <div id="array"></div>
     <script>
         // 1 tot 3
-        const message = prompt('Vul maar wat in!', 'Dit is een test!');
+        // const message = prompt('Vul maar wat in!', 'Dit is een test!');
         function hello(value) {
             document.getElementById('hello').innerText = 'Jij schreef: ' + value;
         }
-        // 4 tot 5
-        const nmb1 = parseInt(prompt('Voer het eerste getal in.'));
-        const nmb2 = parseInt(prompt('Voer het tweede getal in.'));
+        // // 4 tot 5
+        // const nmb1 = parseInt(prompt('Voer het eerste getal in.'));
+        // const nmb2 = parseInt(prompt('Voer het tweede getal in.'));
         function addNumbers(value1, value2) {
             document.getElementById('result').innerText = `Het antwoord is: ${value1 + value2}`;
         }
@@ -50,7 +50,7 @@
             console.log(names.sort());
         }
         // 7d
-        const newValue = prompt('Vul de nieuwe waarde in: ', 'Pluim');
+        // const newValue = prompt('Vul de nieuwe waarde in: ', 'Pluim');
         function addElement() {
             names.push(newValue)
             console.log(names);
@@ -63,19 +63,32 @@
         // 8
         const mijnArray = ['beer', 'Aap', 'Dolfijn', 'chihuahua', 'Ezel'];
         mijnArray.sort(function (a, b) {
+            console.log(a, b);
             const x = a.toLowerCase();
             const y = b.toLowerCase();
-            console.log(x, y);
+            let asciix = parseInt(x.charCodeAt(0));
+            let asciiy = parseInt(y.charCodeAt(0));
+            if (x < y) {
+                console.log(x + ' (' + asciix + ') ' + ' is kleiner dan ' + y + '( ' + asciiy + ' )');
+                return -1;
+            }
+            if (x > y) {
+                console.log(x.length, y.length);
+                console.log(x + ' (' + asciix + ') ' + ' is groter dan ' + y + '( ' + asciiy + ' )');
+                return 1;
+            }
+            return 0;
         });
 
-        hello(message);
-        addNumbers(nmb1, nmb2);
-        countArguments(nmb1);
-        writeElements();
-        selectElements();
-        sortElements();
-        addElement();
-        setString();
+        // hello(message);
+        // addNumbers(nmb1, nmb2);
+        // countArguments(nmb1);
+        // writeElements();
+        // selectElements();
+        // sortElements();
+        // addElement();
+        // setString();
+        console.log(mijnArray);
     </script>
 </body>
 
